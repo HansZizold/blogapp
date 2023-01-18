@@ -19,7 +19,7 @@ In this project, a blog application will be implemented using Ruby on Rails Fraw
 - PostgreSQL
 
 ### Setup
-    git clone https://github.com/HansZizold/Blog
+    git clone https://github.com/HansZizold/blogapp
     cd ./Blog
 
 ### Install
