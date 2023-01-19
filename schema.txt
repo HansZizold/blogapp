@@ -44,7 +44,10 @@ end
 PROCESSING DATA IN MODELS
 
 first_user = User.create(name: 'Tom', photo: 'goku.jpg', bio: 'Teacher from Mexico.')
-second_user = User.create(name: 'Lilly', photo: 'vegeta.jpg', bio: 'Teacher from Poland.')
+second_user = User.create(photo: 'vegeta.jpg', bio: 'Teacher from Poland.')
+
+user1 = User.find_by(name: 'Tom')
+user1.update(posts_counter: -1)
 
 first_post = Post.create(author: first_user, title: 'From Tom', text: 'First post from Tom')
 second_post = Post.create(author: first_user, title: 'From Tom', text: 'Second post from Tom')
