@@ -19,7 +19,7 @@ The application is a fully functional website that shows the list of posts and e
 
 ### Setup
     git clone https://github.com/HansZizold/blogapp
-    cd ./Blog
+    cd ./blogapp
 
 ### Install
     bundle install
