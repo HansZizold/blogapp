@@ -1,8 +1,7 @@
-![](https://img.shields.io/badge/Microverse-blueviolet)
-
 # Blog Application
 
-In this project, a blog application will be implemented using Ruby on Rails Frawework.
+In this project, a classic example of a blog website is implemented using Ruby on Rails Frawework. 
+The application is a fully functional website that shows the list of posts and empower readers to interact with them by adding comments and liking posts.
 
 ## Built With
 
@@ -19,7 +18,7 @@ In this project, a blog application will be implemented using Ruby on Rails Fraw
 - PostgreSQL
 
 ### Setup
-    git clone https://github.com/HansZizold/Blog
+    git clone https://github.com/HansZizold/blogapp
     cd ./Blog
 
 ### Install

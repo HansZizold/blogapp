@@ -32,4 +32,4 @@
 
 # dependencies
 /node_modules
-/schema.txt
+# /schema.txt
