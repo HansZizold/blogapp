@@ -1,0 +1,64 @@
+-- Rails Script
+
+-- Tables Creation
+rails generate migration CreateUsers name:string photo:string bio:text posts_counter:integer
+rails generate migration CreateComments text:text
+rails generate migration CreateLikes
+rails generate migration CreatePosts title:string text:text comment_counter:integer like_counter:integer
+
+-- Foreign Keys
+rails generate migration AddUserRefToComments user:references
+rails generate migration AddPostRefToComments post:references
+rails generate migration AddUserRefToLikes user:references
+rails generate migration AddPostRefToLikes post:references
+rails generate migration AddUserRefToPosts user:references
+
+-- Rename user_id -> author_id
+rails generate migration ChangeColumnName
+class ChangeColumnName < ActiveRecord::Migration[7.0]
+  def change
+    rename_column :posts, :user_id, :author_id
+    rename_column :likes, :user_id, :author_id
+    rename_column :comments, :user_id, :author_id
+  end
+end
+
+-- This part was not neccesary
+-- Indexes
+-- rails generate migration AddAuthor_IdToComments author_id:integer:index
+-- rails generate migration AddPost_IdToComments post_id:integer:index
+-- rails generate migration AddAuthor_IdToLikes author_id:integer:index
+-- rails generate migration AddPost_IdToLikes post_id:integer:index
+-- rails generate migration AddAuthor_IdToPosts author_id:integer:index
+
+-- Default value for counters
+rails generate migration CounterDefaultValues
+class CounterDefaultValues < ActiveRecord::Migration[7.0]
+  def change
+    change_column_default :users, :posts_counter, 0
+    change_column_default :posts, :comment_counter, 0
+    change_column_default :posts, :like_counter, 0
+  end
+end
+
+PROCESSING DATA IN MODELS
+
+first_user = User.create(name: 'Tom', photo: 'goku.jpg', bio: 'Teacher from Mexico.')
+second_user = User.create(name: 'Lilly', photo: 'vegeta.jpg', bio: 'Teacher from Poland.')
+
+first_post = Post.create(author: first_user, title: 'From Tom', text: 'First post from Tom')
+second_post = Post.create(author: first_user, title: 'From Tom', text: 'Second post from Tom')
+third_post = Post.create(author: first_user, title: 'From Tom', text: 'Third post from Tom')
+first_post = Post.create(author: second_user, title: 'From Lilly', text: 'First post from Lilly')
+second_post = Post.create(author: second_user, title: 'From Lilly', text: 'Second post from Lilly')
+third_post = Post.create(author: second_user, title: 'From Lilly', text: 'Third post from Lilly')
+
+Comment.create(post: first_post, author: first_user, text: 'Comment 1 from Tom')
+Comment.create(post: first_post, author: first_user, text: 'Comment 2 from Tom')
+Comment.create(post: first_post, author: first_user, text: 'Comment 3 from Tom')
+Comment.create(post: first_post, author: first_user, text: 'Comment 4 from Tom')
+Comment.create(post: first_post, author: first_user, text: 'Comment 5 from Tom')
+
+Like.create(author: first_user, post: first_post)
+Like.create(author: first_user, post: first_post)
+Like.create(author: first_user, post: first_post)
