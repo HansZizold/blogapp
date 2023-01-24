@@ -104,23 +104,21 @@ Install this project with:
 
 To run the project, execute the following command:
 
-  rails server
+    rails server
 
 ### Run tests
 
 To run tests, run the following command:
 
-  rspec
+    rspec
 
 ### Deployment
 
 You can deploy this project using:
 
-  rails server
+    rails server
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- AUTHORS -->
 
 ## 👥 Authors <a name="authors"></a>
 
