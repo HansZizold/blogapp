@@ -1,19 +1,5 @@
 <a name="readme-top"></a>
 
-- Table of Contents
-- About the Project
-  - Built With
-  - Live Demo
-- Getting Started
-- Authors
-- Future Features
-- Contributing
-- Show your support
-- Acknowledgements
-- License
-
-<!-- TABLE OF CONTENTS -->
-
 # 📗 Table of Contents
 
 - [📖 About the Project](#about-project)
@@ -38,9 +24,9 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [BLOG APPLICATION] <a name="about-project"></a>
+# 📖 BLOG APPLICATION <a name="about-project"></a>
 
-**[BLOG APPLICATION]** is a classic example of a blog website implemented using the Ruby on Rails Frawework. 
+**BLOG APPLICATION** is a classic example of a blog website implemented using the Ruby on Rails Frawework. 
 The application is a fully functional website that shows the list of posts and empower readers to interact with them by adding comments and liking posts.
 
 
@@ -49,14 +35,14 @@ The application is a fully functional website that shows the list of posts and e
 ### Tech Stack <a name="tech-stack"></a>
 
 <details>
-  <summary>Server</summary>
+  <summary>Editor</summary>
   <ul>
     <li><a href="https://code.visualstudio.com/">VSCODE Editor</a></li>
   </ul>
 </details>
 
 <details>
-  <summary>Client</summary>
+  <summary>Server</summary>
   <ul>
     <li><a href="https://rubyonrails.org/">Ruby on Rails</a></li>
   </ul>
@@ -69,17 +55,13 @@ The application is a fully functional website that shows the list of posts and e
   </ul>
 </details>
 
-<!-- Features -->
-
 ### Key Features <a name="key-features"></a>
 
-- **[The Blog allows to create users]**
-- **[The users created need to authenticate to publish posts]**
-- **[The users can make leave comments and likes for the posts]**
+- **The Blog allows to create users**
+- **The users created need to authenticate to publish posts**
+- **The users can make leave comments and likes for the posts**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- LIVE DEMO -->
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
@@ -122,34 +104,19 @@ Install this project with:
 
 To run the project, execute the following command:
 
-<!--
-```rails server
-```
---->
+  rails server
 
 ### Run tests
 
 To run tests, run the following command:
 
-<!--
-Example command:
-
-```
   rspec
-```
---->
 
 ### Deployment
 
 You can deploy this project using:
 
-<!--
-Example:
-
-```rails server
-
-```
- -->
+  rails server
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -169,13 +136,11 @@ Example:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **[User creation and authorization]**
-- [ ] **[Creation of new posts]**
-- [ ] **[Creation of comments and likes for posts]**
+- [ ] **User creation and authorization**
+- [ ] **Creation of new posts**
+- [ ] **Creation of comments and likes for posts**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- CONTRIBUTING -->
 
 ## 🤝 Contributing <a name="contributing"></a>
 
@@ -184,8 +149,6 @@ Contributions, issues, and feature requests are welcome!
 Feel free to check the [issues page](https://github.com/HansZizold/blogapp/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- SUPPORT -->
 
 ## ⭐️ Show your support <a name="support"></a>
 
