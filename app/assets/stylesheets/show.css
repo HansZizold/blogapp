@@ -1,0 +1,48 @@
+html {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.bio {
+  margin: 16px 0 16px 40px;
+  max-width: 86vw;
+  height: 144px;
+  padding: 16px;
+  border: 2px solid black;
+}
+
+.name_bio {
+  margin: 8px 0 32px 0;
+}
+
+.biography {
+  font-size: 20px;
+}
+
+.posts {
+  margin: 16px 0 16px 40px;
+  max-width: 86vw;
+  height: 144px;
+  padding: 16px;
+  border: 2px solid black;
+}
+
+.name_post {
+  margin: 8px 0 32px 0;
+}
+
+.post_text {
+  font-size: 20px;
+}
+
+.post_author {
+  text-align: right;
+}
+
+button {
+  margin: 16px 0 48px 600px;
+}
