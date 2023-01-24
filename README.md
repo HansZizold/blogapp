@@ -5,19 +5,19 @@ The application is a fully functional website that shows the list of posts and e
 
 ## Built With
 
-- VSCODE
-- Ruby on Rails (RoR)
-- PostgreSQL
+- VSCODE editor
+- Ruby on Rails (RoR) Framework
+- PostgreSQL Database
 
 ## Key Features
 
 - The Blog allows to create users.
-- The users created can log in and publish posts
+- The users created need to authenticate to publish posts
 - The users can make leave comments and likes for the posts  
 
 ## Live Demo
 
-- Coming soon
+- Coming soon when the project is finished
 
 ## Getting Started
 
@@ -30,7 +30,7 @@ In order to run this project you need:
 - An editor of your preference, for example VSCODE
 - Ruby 3.1.2 or newer
 - Rails 7.0.4 or newer
-- Git
+- GIT
 - NPM
 - PostgreSQL
 
