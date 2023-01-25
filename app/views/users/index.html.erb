@@ -1,32 +1,11 @@
 <body>
-  <h1 class="title">Ruby on Rails Blog</h1>
-  <div class="user">
-    <img src="../goku.jpg" alt="Goku" class="user_photo">
-    <div class="user_name">
-      <p class="name">User Number One</p>
-      <p class="post">Number of posts: x</p>
-    </div>
-  </div>
-  <div class="user">
-    <img src="../vegeta.jpg" alt="Vegeta" class="user_photo">
-    <div class="user_name">
-      <p class="name">User Number Two</p>
-      <p class="post">Number of posts: x</p>
-    </div>
-  </div>
-  <div class="user">
-    <img src="../Bulma.jpg" alt="Goku" class="user_photo">
-    <div class="user_name">
-      <p class="name">User Number Three</p>
-      <p class="post">Number of posts: x</p>
-    </div>
-  </div>
-  <div class="user">
-    <img src="../18.jpg" alt="Goku" class="user_photo">
-    <div class="user_name">
-      <p class="name">User Number Four</p>
-      <p class="post">Number of posts: x</p>
-    </div>
-  </div>
+  <%= render "shared/title" %>
+  <% @users.each do |user| %>
+    User Photo: <%= user.photo %>
+    <%= link_to user_path(user.id) do %>
+      User Name: <%= user.name %>
+    <% end %>
+    Posts Counter: <%= user.posts_counter %><br>
+  <% end %>
 </body>
 </html>
