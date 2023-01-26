@@ -1,0 +1,10 @@
+.comments {
+  width: 50vw;
+  border: 1px solid black;
+  margin-bottom: 8px;
+}
+
+.commenttext {
+  padding-left: 16px;
+  margin: 4px;
+}
