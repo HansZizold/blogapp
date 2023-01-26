@@ -1,38 +1,29 @@
+<%= stylesheet_link_tag('user_show') %>
+
 <body>
-  <h1 class="title">Ruby on Rails Blog</h1>
-  <div class="main">
-    <div class="user">
-      <img src="../goku.jpg" alt="Goku" class="user_photo">
-      <div class="user_name">
-        <p class="name">User Number One</p>
-        <p class="post">Number of posts: x</p>
-      </div>
+  <div class = "user">
+    <img src=<%= "../#{@user.photo}" %> alt="user_photo" class="user_photo">
+    <div class = "username">
+      <p class="name"><%= @user.name %></p>
+      <p class="post">Number of posts: <%= @user.posts_counter %></p>
     </div>
-    <div class="bio">
-      <h2 class="name_bio">BIO</h2>
-      <p class="biography">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias corporis tempore at excepturi veniam hic nisi quae eaque fugiat. Vel quam quo itaque repellendus voluptatum! Laboriosam excepturi totam quibusdam sunt.
-      </p>
-    </div>
-    <div class="posts">
-      <h2 class="name_post">Post 1</h2>
-      <p class="post_text">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias corporis tempore at excepturi veniam hic nisi quae eaque fugiat. Vel quam quo itaque repellendus voluptatum! Laboriosam excepturi totam quibusdam sunt.
-      </p>
-      <p class="post_author">
-        Comments: x, Likes: y
-      </p>
-    </div>
-    <div class="posts">
-      <h2>Post 2</h2>
-      <p class="post_text">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae quis voluptatem ab sapiente optio hic expedita ipsum, mollitia inventore quam fugiat praesentium, sequi eveniet. Corporis neque aliquid sit optio saepe!
-      </p>
-      <p class="post_author">
-        Comments: x, Likes: y
-      </p>
-    </div>
-    <button>See all posts</button>
   </div>
+
+  <div class="bio">
+    <h2 class="namebio">BIO</h2>
+    <p class="textbio"><%= @user.bio %></p>
+  </div>
+
+  <% @posts.each_with_index do |post, index| %>
+    <div class = "posts">
+      <p class = "postnumber">Post #: <%= post.id %></p>
+      <p class = "posttext"><%= post.text %></p>
+      <p class = "postcomments">Comments: <%= post.comment_counter %>, Likes: <%= post.like_counter %></p>
+    </div>
+  <% end %>
+
+  <%= link_to user_posts_path(@user.id) do %>
+    <button>See all posts</button>
+  <% end %>
 </body>
 </html>

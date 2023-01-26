@@ -1,29 +1,18 @@
+<%= stylesheet_link_tag('post_show') %>
+
 <body>
-  <h1 class="title">Ruby on Rails Blog</h1>
-  <div class="main">
-    <div class="posts_complete">
-      <div class="post_title">
-        <h2 class="name_post">Post 1 by Username</h2>
-        <p class="comments_likes">Comments: x, Likes: y</p>
-      </div>
-      <p class="post_text">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias corporis tempore at excepturi veniam hic nisi quae eaque fugiat. Vel quam quo itaque repellendus voluptatum! Laboriosam excepturi totam quibusdam sunt.
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias corporis tempore at excepturi veniam hic nisi quae eaque fugiat. Vel quam quo itaque repellendus voluptatum! Laboriosam excepturi totam quibusdam sunt.
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias corporis tempore at excepturi veniam hic nisi quae eaque fugiat. Vel quam quo itaque repellendus voluptatum! Laboriosam excepturi totam quibusdam sunt.
-      </p>
+  <div class = "commentposttext">
+    <div class = "postcommlike">
+      <p class = "commentpost">Post #<%= @post.id %> by <%= @user.name %></p>
+      <p class = "postcomments">Comments: <%= @post.comment_counter %>, Likes: <%= @post.like_counter %></p>
     </div>
-    <div class="comments">
-      <p class="comment_text">Username: Comment1</p>
-      <p class="comment_text">Username: Comment2</p>
-      <p class="comment_text">Username: Comment3</p>
-      <p class="comment_text">Username: Comment4</p>
-      <p class="comment_text">Username: Comment5</p>
-      <p class="comment_text">Username: Comment1</p>
-      <p class="comment_text">Username: Comment2</p>
-      <p class="comment_text">Username: Comment3</p>
-      <p class="comment_text">Username: Comment4</p>
-      <p class="comment_text">Username: Comment5</p>
-    </div>
+    <p class = "postcommenttext"><%= @post.text %></p>
+  </div>
+
+  <div class = "comments">
+    <% @comments.each do |comment| %>
+      <p class = "commenttext"><%= @users.find(comment.author_id).name %>: <%= comment.text %></p>
+    <% end %>
   </div>
 </body>
 </html>

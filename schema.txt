@@ -44,23 +44,39 @@ end
 PROCESSING DATA IN MODELS
 
 first_user = User.create(name: 'Tom', photo: 'goku.jpg', bio: 'Teacher from Mexico.')
-second_user = User.create(photo: 'vegeta.jpg', bio: 'Teacher from Poland.')
+second_user = User.create(name: 'Lilly', photo: 'vegeta.jpg', bio: 'Teacher from Poland.')
 
 user1 = User.find_by(name: 'Tom')
-user1.update(posts_counter: -1)
+first_user.update(photo: 'user.png')
+second_user.update(photo: 'user.png')
 
 first_post = Post.create(author: first_user, title: 'From Tom', text: 'First post from Tom')
 second_post = Post.create(author: first_user, title: 'From Tom', text: 'Second post from Tom')
 third_post = Post.create(author: first_user, title: 'From Tom', text: 'Third post from Tom')
-first_post = Post.create(author: second_user, title: 'From Lilly', text: 'First post from Lilly')
-second_post = Post.create(author: second_user, title: 'From Lilly', text: 'Second post from Lilly')
-third_post = Post.create(author: second_user, title: 'From Lilly', text: 'Third post from Lilly')
+fourth_post = Post.create(author: second_user, title: 'From Lilly', text: 'First post from Lilly')
+fifth_post = Post.create(author: second_user, title: 'From Lilly', text: 'Second post from Lilly')
+sixth_post = Post.create(author: second_user, title: 'From Lilly', text: 'Third post from Lilly')
+post7 = Post.create(author: first_user, title: 'From Tom', text: 'Fourth post from Tom')
+post8 = Post.create(author: second_user, title: 'From Lilly', text: 'Fourth post from Lilly')
 
 Comment.create(post: first_post, author: first_user, text: 'Comment 1 from Tom')
+Comment.create(post: first_post, author: second_user, text: 'Comment 1 from Lilly')
 Comment.create(post: first_post, author: first_user, text: 'Comment 2 from Tom')
+Comment.create(post: first_post, author: second_user, text: 'Comment 2 from Lilly')
 Comment.create(post: first_post, author: first_user, text: 'Comment 3 from Tom')
-Comment.create(post: first_post, author: first_user, text: 'Comment 4 from Tom')
-Comment.create(post: first_post, author: first_user, text: 'Comment 5 from Tom')
+Comment.create(post: first_post, author: second_user, text: 'Comment 3 from Lilly')
+
+Comment.create(post: second_post, author: first_user, text: 'Comment 1 from Tom')
+Comment.create(post: second_post, author: second_user, text: 'Comment 1 from Lilly')
+Comment.create(post: second_post, author: first_user, text: 'Comment 2 from Tom')
+Comment.create(post: second_post, author: second_user, text: 'Comment 2 from Lilly')
+
+Comment.create(post: third_post, author: first_user, text: 'Comment 1 from Tom')
+Comment.create(post: third_post, author: second_user, text: 'Comment 1 from Lilly')
+Comment.create(post: third_post, author: first_user, text: 'Comment 2 from Tom')
+Comment.create(post: third_post, author: second_user, text: 'Comment 2 from Lilly')
+
+Comment.create(post: fourth_post, author: second_user, text: 'Comment 3 from Lilly')
 
 Like.create(author: first_user, post: first_post)
 Like.create(author: first_user, post: first_post)

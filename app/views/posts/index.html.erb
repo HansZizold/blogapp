@@ -1,47 +1,32 @@
+<%= stylesheet_link_tag('post_index') %>
+
 <body>
-  <h1 class="title">Ruby on Rails Blog</h1>
-  <div class="main">
-    <div class="user">
-      <img src="../../goku.jpg" alt="Goku" class="user_photo">
-      <div class="user_name">
-        <p class="name">User Number One</p>
-        <p class="post">Number of posts: x</p>
+  <div class = "user">
+    <img src=<%= "../../#{@user.photo}" %> alt="user_photo" class="user_photo">
+    <div class = "username">
+      <p class="name"><%= @user.name %></p>
+      <p class="post">Number of posts: <%= @user.posts_counter %></p>
+    </div>
+  </div>
+
+  <% @posts.each_with_index do |post, index| %>
+    <div class = "posts">
+      <%= link_to user_post_path(@user.id, post.id) do %>
+        <p class = "postnumber">Post #: <%= post.id %></p>
+      <% end %>
+      <p class = "posttext"><%= post.text %></p>
+      <p class = "postcomments">Comments: <%= post.comment_counter %>, Likes: <%= post.like_counter %></p>
+    </div>
+
+    <% if post.comment_counter > 0 %>
+      <div class = "comments">
+        <% post.recent_comments.each do |comment| %>
+          <p class = "commenttext"><%= @users.find(comment.author_id).name %>: <%= comment.text %></p>
+        <% end %>
       </div>
-    </div>
-    <div class="posts">
-      <h2 class="name_post">Post 1</h2>
-      <p class="post_text">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias corporis tempore at excepturi veniam hic nisi quae eaque fugiat. Vel quam quo itaque repellendus voluptatum! Laboriosam excepturi totam quibusdam sunt.
-      </p>
-      <p class="post_author">
-        Comments: x, Likes: y
-      </p>
-    </div>
-    <div class="comments">
-      <p class="comment_text">Username: Comment1</p>
-      <p class="comment_text">Username: Comment2</p>
-      <p class="comment_text">Username: Comment3</p>
-      <p class="comment_text">Username: Comment4</p>
-      <p class="comment_text">Username: Comment5</p>
-    </div>
-  </div>
-    <div class="posts">
-      <h2 class="name_post">Post 2</h2>
-      <p class="post_text">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias corporis tempore at excepturi veniam hic nisi quae eaque fugiat. Vel quam quo itaque repellendus voluptatum! Laboriosam excepturi totam quibusdam sunt.
-      </p>
-      <p class="post_author">
-        Comments: x, Likes: y
-      </p>
-    </div>
-    <div class="comments">
-      <p class="comment_text">Username: Comment1</p>
-      <p class="comment_text">Username: Comment2</p>
-      <p class="comment_text">Username: Comment3</p>
-      <p class="comment_text">Username: Comment4</p>
-      <p class="comment_text">Username: Comment5</p>
-    </div>
-  </div>
+    <% end %>
+  <% end %>
+
   <button>Pagination</button>
 </body>
 </html>

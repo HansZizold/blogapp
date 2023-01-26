@@ -100,6 +100,49 @@ Install this project with:
     rails new blogapp
     bundle install
 
+### Deployment
+
+To deploy the project you need to create the database, you can use the following commands:
+
+  -- TABLE CREATION
+  rails generate migration CreateUsers name:string photo:string bio:text posts_counter:integer
+  rails generate migration CreateComments text:text
+  rails generate migration CreateLikes
+  rails generate migration CreatePosts title:string text:text comment_counter:integer like_counter:integer
+
+  --FOREIGN KEYS
+  rails generate migration AddUserRefToComments user:references
+  rails generate migration AddPostRefToComments post:references
+  rails generate migration AddUserRefToLikes user:references
+  rails generate migration AddPostRefToLikes post:references
+  rails generate migration AddUserRefToPosts user:references
+
+  --RENAME user_id to author_id
+  rails generate migration ChangeColumnName
+  --MIGRATION FILE CONTENT
+    class ChangeColumnName < ActiveRecord::Migration[7.0]
+      def change
+        rename_column :posts, :user_id, :author_id
+        rename_column :likes, :user_id, :author_id
+        rename_column :comments, :user_id, :author_id
+      end
+    end
+
+  -- DEFAUKT VALUES FOR COUNTERS
+  rails generate migration CounterDefaultValues
+  --MIGRATION FILE CONTENT
+  class CounterDefaultValues < ActiveRecord::Migration[7.0]
+    def change
+      change_column_default :users, :posts_counter, 0
+      change_column_default :posts, :comment_counter, 0
+      change_column_default :posts, :like_counter, 0
+    end
+  end
+
+Finally you can run:
+
+  rails db: migrate;
+
 ### Usage
 
 To run the project, execute the following command:
@@ -111,12 +154,6 @@ To run the project, execute the following command:
 To run tests, run the following command:
 
     rspec
-
-### Deployment
-
-You can deploy this project using:
-
-    rails server
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
