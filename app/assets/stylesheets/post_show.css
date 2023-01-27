@@ -20,3 +20,37 @@
   padding-left: 16px;
   margin-top: 0;
 }
+
+.newcomment {
+  margin-top: 16px;
+  margin-bottom: 8px;
+}
+
+.commentbutton {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.newcommentbuttton {
+  width: fit-content;
+  background-color: #86a8e7;
+  color: #795718;
+  font-weight: bold;
+  border-width: 2px;
+  cursor: pointer;
+}
+
+.commentlike {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.likebutton {
+  margin: 0 32px 0 0;
+}
+
+.like_button {
+  cursor: pointer;
+}

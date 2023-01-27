@@ -1,0 +1,41 @@
+.newposttitle,
+.newposttext,
+.newcomment {
+  display: flex;
+  flex-direction: row;
+  width: 30vw;
+  margin-bottom: 24px;
+}
+
+.posttitle {
+  margin-right: 4px;
+}
+
+input,
+textarea {
+  background-color: #86a8e7;
+  border: 2px solid #795718;
+  color: #795718;
+  font-weight: bold;
+  width: 100%;
+  margin-left: 8px;
+}
+
+textarea {
+  height: 16vh;
+}
+
+.postbutton {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.newpostbuttton {
+  width: fit-content;
+  background-color: #86a8e7;
+  color: #795718;
+  font-weight: bold;
+  border-width: 2px;
+  cursor: pointer;
+}

@@ -6,13 +6,33 @@
       <p class = "commentpost">Post #<%= @post.id %> by <%= @user.name %></p>
       <p class = "postcomments">Comments: <%= @post.comment_counter %>, Likes: <%= @post.like_counter %></p>
     </div>
-    <p class = "postcommenttext"><%= @post.text %></p>
+    <div class = "commentlike">
+      <p class = "postcommenttext"><%= @post.text %></p>
+      <div class='likebutton'>
+        <%= form_with url: user_post_likes_path(@user, @post), method: :post, scope: :like do |form| %>
+          <% form.submit 'Like', class: 'like_button' %>
+        <% end %>
+      </div>
+    </div>
   </div>
 
-  <div class = "comments">
-    <% @comments.each do |comment| %>
-      <p class = "commenttext"><%= @users.find(comment.author_id).name %>: <%= comment.text %></p>
-    <% end %>
-  </div>
+  <% if @post.comment_counter > 0 %>
+    <div class = "comments">
+      <% @comments.each do |comment| %>
+        <p class = "commenttext"><%= @users.find(comment.author_id).name %>: <%= comment.text %></p>
+      <% end %>
+    </div>
+  <% end %>
+
+  <%= form_with url: user_post_comments_path(@user, @post), method: :post, scope: :comment do |form| %>      
+    <div class = "newcomment">
+      <%= form.label :text %>
+      <%= form.text_field :text %>
+    </div>
+    <div class = "commentbutton">
+      <%= form.submit :'Create Comment', class: 'newcommentbuttton' %>
+    </div>
+  <% end %>
+
 </body>
 </html>

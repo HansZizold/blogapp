@@ -49,6 +49,7 @@ second_user = User.create(name: 'Lilly', photo: 'vegeta.jpg', bio: 'Teacher from
 user1 = User.find_by(name: 'Tom')
 first_user.update(photo: 'user.png')
 second_user.update(photo: 'user.png')
+post1 = Post.find(19)
 
 first_post = Post.create(author: first_user, title: 'From Tom', text: 'First post from Tom')
 second_post = Post.create(author: first_user, title: 'From Tom', text: 'Second post from Tom')
@@ -78,6 +79,6 @@ Comment.create(post: third_post, author: second_user, text: 'Comment 2 from Lill
 
 Comment.create(post: fourth_post, author: second_user, text: 'Comment 3 from Lilly')
 
-Like.create(author: first_user, post: first_post)
+Like.create(author: first_user, post: post1)
 Like.create(author: first_user, post: first_post)
 Like.create(author: first_user, post: first_post)

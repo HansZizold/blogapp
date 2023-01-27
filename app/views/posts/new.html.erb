@@ -1,0 +1,16 @@
+<%= stylesheet_link_tag('post_new') %>
+
+<h2>ADD A NEW POST</h2>
+<%= form_with model: @post, url: user_posts_path, method: :post do |form| %>
+  <div class = "newposttitle">
+    <%= form.label :title %>: 
+    <%= form.text_field :title %>
+  </div>
+  <div class = "newposttext">
+    <%= form.label :text %>: 
+    <%= form.text_area :text %>
+  </div>
+  <div class = "postbutton">
+    <%= form.submit :'Create Post', class: 'newpostbuttton'  %>
+  </div>
+<% end %>

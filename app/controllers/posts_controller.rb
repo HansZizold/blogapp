@@ -11,4 +11,22 @@ class PostsController < ApplicationController
     @user = User.find(params[:user_id])
     @comments = Comment.where(post_id: params[:id])
   end
+
+  def new
+    @post = Post.new
+  end
+
+  def create
+    post = Post.new(params.require(:post).permit(:author, :title, :text))
+    author = current_user
+    post.author = author
+
+    if post.save
+      flash[:success] = 'Post saved successfully'
+      redirect_to user_posts_path(author)
+    else
+      flash.now[:error] = 'Error: Post could not be saved'
+      render :new
+    end
+  end
 end
