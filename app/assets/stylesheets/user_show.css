@@ -37,11 +37,17 @@
   padding-right: 24px;
 }
 
+.buttons {
+  display: flex;
+  flex-direction: row;
+}
+
 button {
   background-color: #86a8e7;
   color: #795718;
   font-weight: bold;
   margin-bottom: 16px;
+  margin-right: 4px;
   border-width: 1px;
   border-color: #86a8e7;
   cursor: pointer;

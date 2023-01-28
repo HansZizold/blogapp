@@ -11,9 +11,7 @@
 
   <% @posts.each_with_index do |post, index| %>
     <div class = "posts">
-      <%= link_to user_post_path(@user.id, post.id) do %>
-        <p class = "postnumber">Post #: <%= post.id %></p>
-      <% end %>
+      <p><%= link_to "Post #: #{post.id}", user_post_path(@user.id, post.id), class: 'postnumber' %></p>
       <p class = "posttext"><%= post.text %></p>
       <p class = "postcomments">Comments: <%= post.comment_counter %>, Likes: <%= post.like_counter %></p>
     </div>
@@ -27,6 +25,11 @@
     <% end %>
   <% end %>
 
-  <button>Pagination</button>
+  <div class = "buttons">
+    <%= link_to users_path do %>
+      <button>Main Page</button>
+    <% end %>
+    <button>Pagination</button>
+  </div>
 </body>
 </html>
