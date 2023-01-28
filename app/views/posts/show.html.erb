@@ -9,7 +9,7 @@
     <div class = "commentlike">
       <p class = "postcommenttext"><%= @post.text %></p>
       <div class='likebutton'>
-        <%= form_with url: user_post_likes_path(@user, @post), method: :post, scope: :like do |form| %>
+        <%= form_with url: user_post_likes_path(@user, @post), method: :post do |form| %>
           <% form.submit 'Like', class: 'like_button' %>
         <% end %>
       </div>
