@@ -29,4 +29,22 @@ class PostsController < ApplicationController
       render :new
     end
   end
+
+  def destroy
+    user = User.find(params[:user_id])
+    comments = Comment.where(post_id: params[:id])
+    comments.each(&:destroy)
+    likes = Like.where(post_id: params[:id])
+    likes.each(&:destroy)
+    post = Post.find(params[:id])
+    post.delete
+
+    if post
+      flash[:success] = 'Post deleted successfully'
+      redirect_to user_posts_path(user)
+    else
+      flash.now[:error] = 'Error: Post could not be saved'
+      render :new
+    end
+  end
 end
