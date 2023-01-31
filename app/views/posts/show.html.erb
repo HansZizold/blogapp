@@ -3,7 +3,7 @@
 <body>
   <div class = "commentposttext">
     <div class = "postcommlike">
-      <p class = "commentpost">Post #<%= @post.id %> by <%= @user.name %></p>
+      <p class = "commentpost"><%= "Post #{@post.id}: #{@post.title} by #{@user.name}" %>
       <p class = "postcomments">Comments: <%= @post.comment_counter %>, Likes: <%= @post.like_counter %></p>
     </div>
     <div class = "commentlike">

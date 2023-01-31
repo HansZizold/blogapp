@@ -16,7 +16,7 @@
 
   <% @posts.each_with_index do |post, index| %>
     <div class = "posts">
-      <p class = "postnumber">Post #: <%= post.id %></p>
+      <p class = "postnumber"><%= "Post #{post.id}: #{post.title}" %></p>
       <p class = "posttext"><%= post.text %></p>
       <p class = "postcomments">Comments: <%= post.comment_counter %>, Likes: <%= post.like_counter %></p>
     </div>
