@@ -165,6 +165,11 @@ To run tests, run the following command:
 - Twitter:[@twitterhandle](https://twitter.com/hanzio27) 
 - LinkedIn:[LinkedIn](https://www.linkedin.com/in/hans-paul-zizold-37129037/) 
 
+👤 **Rebaz Farid**
+
+- GitHub:[@githubhandle](https://github.com/rebaz36) 
+- LinkedIn:[LinkedIn](https://www.linkedin.com/in/rebaz-farid-1470b6155/) 
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->
