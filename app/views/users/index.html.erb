@@ -7,7 +7,7 @@
       <img src=<%= user.photo %> alt="user_photo" class="user_photo">
       <div class="username">
         <%= link_to user.name, user_path(user.id), class: 'name' %>
-        <p class="post">Number of posts: <%= user.posts_counter %></p>
+        <p class="post">Number of posts: <%= user.posts.count %></p>
       </div>
     </div>
   <% end %>
