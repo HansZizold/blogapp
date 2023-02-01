@@ -5,6 +5,7 @@ class CommentsController < ApplicationController
     comment.author = author
     post = Post.find(params[:post_id])
     comment.post = post
+    comment.inc_comments_counter
 
     if comment.save
       flash[:success] = 'Comment saved successfully'
@@ -17,7 +18,10 @@ class CommentsController < ApplicationController
   def destroy
     user = User.find(params[:user_id])
     post = Post.find(params[:post_id])
-    comment = Comment.find(params[:id]).delete
+    comment = Comment.find(params[:id])
+    comment.dec_comments_counter
+    comment.delete
+
     if comment
       flash[:success] = 'Comment deleted successfully'
     else

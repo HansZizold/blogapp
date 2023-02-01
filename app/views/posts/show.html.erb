@@ -1,6 +1,7 @@
 <%= stylesheet_link_tag('post_show') %>
 
 <body>
+  <%= render "shared/title" %>
   <div class = "commentposttext">
     <div class = "postcommlike">
       <p class = "commentpost"><%= "Post #{@post.id}: #{@post.title} by #{@user.name}" %>

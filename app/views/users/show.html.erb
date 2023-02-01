@@ -1,6 +1,7 @@
 <%= stylesheet_link_tag('user_show') %>
 
 <body>
+  <%= render "shared/title" %>
   <div class = "user">
     <img src=<%= "../#{@user.photo}" %> alt="user_photo" class="user_photo">
     <div class = "username">
