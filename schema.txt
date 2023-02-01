@@ -41,6 +41,14 @@ class CounterDefaultValues < ActiveRecord::Migration[7.0]
   end
 end
 
+-- Add role column to users table for authorization activity
+rails generate migration AddRoleToUsers
+class CounterDefaultValues < ActiveRecord::Migration[7.0]
+  def change
+    add_column :users, :role, :string
+  end
+end
+
 PROCESSING DATA IN MODELS
 
 first_user = User.create(name: 'Tom', photo: 'goku.jpg', bio: 'Teacher from Mexico.')
