@@ -1,3 +1,9 @@
 <%= stylesheet_link_tag('title') %>
 
-<h1 class="title">Blog App</h1>
+<div class = "header">
+  <h1 class="title">Blog App</h1>
+  <div class = "headeruser">
+    <p class="userlogin">User: <%= current_user.name %></p>
+    <%= button_to "Logout", destroy_user_session_path, method: :delete, class: 'logout'  %>
+  </div>
+</div>

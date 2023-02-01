@@ -20,6 +20,7 @@ class PostsController < ApplicationController
     post = Post.new(params.require(:post).permit(:author, :title, :text))
     author = current_user
     post.author = author
+    post.inc_posts_counter
 
     if post.save
       flash[:success] = 'Post saved successfully'
@@ -37,6 +38,7 @@ class PostsController < ApplicationController
     likes = Like.where(post_id: params[:id])
     likes.each(&:destroy)
     post = Post.find(params[:id])
+    post.dec_posts_counter
     post.delete
 
     if post

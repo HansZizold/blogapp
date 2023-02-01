@@ -57,9 +57,6 @@ group :development, :test do
 
   # Capybara, the library that allows us to interact with the browser using Ruby
   gem 'capybara'
-
-  # bullet gem for N+1 problems
-  gem 'bullet'
 end
 
 group :development do
@@ -79,5 +76,8 @@ group :test do
   gem 'webdrivers'
 end
 
-# Rubocop
+# Rubocop for best practices
 gem 'rubocop', '>= 1.0', '< 2.0'
+
+# Devise for authentication
+gem 'devise'
