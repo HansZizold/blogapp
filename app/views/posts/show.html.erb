@@ -16,8 +16,10 @@
       </div>
     </div>
     <div>
-      <%= form_with url: user_post_path(@user, @post), method: :delete do |form| %>
-        <% form.submit 'Delete Post', class: 'deletepostbutton' %>
+      <% if can? :delete_post, @post %>
+        <%= form_with url: user_post_path(@user, @post), method: :delete do |form| %>
+          <% form.submit 'Delete Post', class: 'deletepostbutton' %>
+        <% end %>
       <% end %>
     </div>
   </div>
@@ -28,8 +30,10 @@
         <div class = "commentdelete">
           <p class = "commenttext"><%= @users.find(comment.author_id).name %>: <%= comment.text %></p>
           <div class = "deletecomment">
-            <%= form_with url: user_post_comment_path(@user, @post, comment), method: :delete, scope: :comment do |form| %>      
-              <%= form.submit :'Delete Comment', class: 'deletecommentbutton' %>
+            <% if can? :delete_comment, comment %>
+              <%= form_with url: user_post_comment_path(@user, @post, comment), method: :delete, scope: :comment do |form| %>      
+                <%= form.submit :'Delete Comment', class: 'deletecommentbutton' %>
+              <% end %>
             <% end %>
           </div>
         </div>
