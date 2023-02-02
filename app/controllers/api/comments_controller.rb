@@ -6,7 +6,7 @@ class Api::CommentsController < ApplicationController
   end
 
   def create
-    comment = Comment.create(text: params[:text], author: User.find(params[:user_id]),
+    comment = Comment.create(text: params[:text], author: current_user,
                              post: Post.find(params[:post_id]))
     comment.inc_comments_counter
 
