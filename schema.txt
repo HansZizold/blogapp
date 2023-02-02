@@ -90,3 +90,10 @@ Comment.create(post: fourth_post, author: second_user, text: 'Comment 3 from Lil
 Like.create(author: first_user, post: post1)
 Like.create(author: first_user, post: first_post)
 Like.create(author: first_user, post: first_post)
+
+--APIs
+APIs were tested with postman. A desktop version was installed to allow requests to localhost.
+It was neccesary to configure exceptions in the application controller to make it work
+
+  protect_from_forgery with: :exception, if: proc { |c| c.request.format != 'application/json' }
+  protect_from_forgery with: :null_session, if: proc { |c| c.request.format == 'application/json' }
