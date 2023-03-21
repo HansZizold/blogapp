@@ -1,0 +1,36 @@
+<%= stylesheet_link_tag('post_index') %>
+
+<body>
+  <%= render "shared/title" %>
+  <div class = "user">
+    <img src=<%= "../../#{@user.photo}" %> alt="user_photo" class="user_photo">
+    <div class = "username">
+      <p class="name"><%= @user.name %></p>
+      <p class="post">Number of posts: <%= @user.posts_counter %></p>
+    </div>
+  </div>
+
+  <% @posts.each do |post| %>
+    <div class = "posts">
+      <p><%= link_to "Post ##{post.id}: #{post.title}", user_post_path(@user.id, post.id), class: 'postnumber' %></p>
+      <p class = "posttext"><%= post.text %></p>
+      <p class = "postcomments">Comments: <%= post.comment_counter %>, Likes: <%= post.like_counter %></p>
+    </div>
+
+    <% if post.comment_counter > 0 %>
+      <div class = "comments">
+        <% post.recent_comments.each do |comment| %>
+          <p class = "commenttext"><%= @users.find(comment.author_id).name %>: <%= comment.text %></p>
+        <% end %>
+      </div>
+    <% end %>
+  <% end %>
+
+  <div class = "buttons">
+    <%= link_to users_path do %>
+      <button>Main Page</button>
+    <% end %>
+    <button class="pagination">Pagination</button>
+  </div>
+</body>
+</html>

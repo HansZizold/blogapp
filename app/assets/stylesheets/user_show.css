@@ -1,0 +1,54 @@
+.user {
+  margin-top: 12px;
+}
+
+.bio {
+  width: 50vw;
+  border: 1px solid black;
+  margin-bottom: 12px;
+}
+
+.namebio {
+  padding-left: 24px;
+}
+
+.textbio {
+  padding-left: 24px;
+}
+
+.posts {
+  width: 50vw;
+  border: 1px solid black;
+  margin-bottom: 8px;
+}
+
+.postnumber {
+  padding-left: 24px;
+  font-weight: bold;
+  color: #795718;
+}
+
+.posttext {
+  padding-left: 24px;
+}
+
+.postcomments {
+  text-align: end;
+  padding-right: 24px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+}
+
+button {
+  background-color: #86a8e7;
+  color: #795718;
+  font-weight: bold;
+  margin-bottom: 16px;
+  margin-right: 4px;
+  border-width: 1px;
+  border-color: #86a8e7;
+  cursor: pointer;
+}

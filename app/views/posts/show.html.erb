@@ -1,0 +1,59 @@
+<%= stylesheet_link_tag('post_show') %>
+
+<body>
+  <%= render "shared/title" %>
+  <div class = "commentposttext">
+    <div class = "postcommlike">
+      <p class = "commentpost"><%= "Post #{@post.id}: #{@post.title} by #{@user.name}" %>
+      <p class = "postcomments">Comments: <%= @post.comment_counter %>, Likes: <%= @post.like_counter %></p>
+    </div>
+    <div class = "commentlike">
+      <p class = "postcommenttext"><%= @post.text %></p>
+      <div class= "likebutton">
+        <%= form_with url: user_post_likes_path(@user, @post), method: :post do |form| %>
+          <% form.submit 'Like', class: 'like_button' %>
+        <% end %>
+      </div>
+    </div>
+    <div>
+      <% if can? :delete_post, @post %>
+        <%= form_with url: user_post_path(@user, @post), method: :delete do |form| %>
+          <% form.submit 'Delete Post', class: 'deletepostbutton' %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+
+  <% if @post.comment_counter > 0 %>
+    <div class = "comments">
+      <% @comments.each do |comment| %>
+        <div class = "commentdelete">
+          <p class = "commenttext"><%= @users.find(comment.author_id).name %>: <%= comment.text %></p>
+          <div class = "deletecomment">
+            <% if can? :delete_comment, comment %>
+              <%= form_with url: user_post_comment_path(@user, @post, comment), method: :delete, scope: :comment do |form| %>      
+                <%= form.submit :'Delete Comment', class: 'deletecommentbutton' %>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+
+  <div class = "createcomment">
+    <%= form_with url: user_post_comments_path(@user, @post), method: :post, scope: :comment do |form| %>      
+      <div class = "newcomment">
+        <%= form.label :text %>
+        <%= form.text_field :text %>
+      </div>
+      <div class = "commentbutton">
+        <%= form.submit :'Create Comment', class: 'newcommentbuttton' %>
+      </div>
+    <% end %>
+    <%= link_to user_posts_path(@user) do %>
+      <button class = "postpage">Posts Page</button>
+    <% end %>
+  </div>
+</body>
+</html>

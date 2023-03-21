@@ -1,0 +1,15 @@
+<%= stylesheet_link_tag('user_index') %>
+
+<body>
+  <%= render "shared/title" %>
+  <% @users.each do |user| %>
+    <div class="user">
+      <img src=<%= user.photo %> alt="user_photo" class="user_photo">
+      <div class="username">
+        <%= link_to user.name, user_path(user.id), class: 'name' %>
+        <p class="post">Number of posts: <%= user.posts_counter %></p>
+      </div>
+    </div>
+  <% end %>
+</body>
+</html>

@@ -1,0 +1,95 @@
+.commentposttext {
+  width: 50vw;
+  margin-top: 16px;
+  border: 1px solid black;
+  margin-bottom: 8px;
+}
+
+.postcommlike {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.commentpost {
+  padding-left: 16px;
+  font-weight: bold;
+}
+
+.postcommenttext {
+  padding-left: 16px;
+  margin-top: 0;
+}
+
+.newcomment {
+  margin-top: 16px;
+  margin-bottom: 8px;
+  margin-left: 16px;
+}
+
+.commentbutton {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-left: 8px;
+  margin-bottom: 8px;
+}
+
+.newcommentbuttton {
+  width: fit-content;
+  background-color: #86a8e7;
+  color: #795718;
+  font-weight: bold;
+  border-width: 2px;
+  cursor: pointer;
+}
+
+.commentlike {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.likebutton {
+  margin: 0 32px 0 0;
+}
+
+.like_button {
+  cursor: pointer;
+}
+
+.createcomment {
+  display: flex;
+  flex-direction: column;
+  width: 50vw;
+  border: 1px solid black;
+}
+
+.postpage {
+  margin-left: 16px;
+  border: 2px solid #795718;
+  cursor: pointer;
+}
+
+.commentdelete {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.deletecomment {
+  margin-right: 24px;
+  align-self: center;
+}
+
+.deletecommentbutton {
+  cursor: pointer;
+}
+
+.deletepostbutton {
+  width: fit-content;
+  margin-bottom: 8px;
+  margin-left: 16px;
+  border: 2px solid #795718;
+  cursor: pointer;
+}
