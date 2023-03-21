@@ -24,9 +24,9 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 BLOG APPLICATION <a name="about-project"></a>
+# 📖 BLOG APP <a name="about-project"></a>
 
-**BLOG APPLICATION** is a classic example of a blog website implemented using the Ruby on Rails Frawework. 
+**BLOG APP** is a classic example of a blog website implemented using the Ruby on Rails Frawework. 
 The application is a fully functional website that shows the list of posts and empower readers to interact with them by adding comments and liking posts.
 
 
