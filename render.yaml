@@ -1,7 +1,7 @@
 databases:
   - name: blogapp
     databaseName: blogapp
-    user: mysite
+    user: postgres
 
 services:
   - type: web
