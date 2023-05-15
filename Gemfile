@@ -84,3 +84,5 @@ gem 'devise'
 
 # CanCanCan for authorization
 gem 'cancancan'
+
+gem "dockerfile-rails", ">= 1.2", :group => :development

@@ -65,7 +65,7 @@ The application is a fully functional website that shows the list of posts and e
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- Coming soon when the project is finished
+- [Blog App](https://cold-brook-8415.fly.dev/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
